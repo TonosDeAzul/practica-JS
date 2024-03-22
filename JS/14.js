@@ -8,12 +8,17 @@ let numsArray = [1, 2, 3, 4, 5, 6, 7];
 let num1 = parseInt(prompt("Ingrese el número dónde iniciar"));
 let num2 = parseInt(prompt("Ingrese el número dónde finalizar"));
 
-function contarRango(array, inicio, fin){
+function sumarArreglo(array, inicio, fin){
     let sumaRango = 0;
-    for(let i = inicio; i <= fin; ++i){
-        inicio === fin ? sumaRango = 0 : sumaRango += i;
+    if(fin >= array.length){
+        console.log(`No existen esas posiciones dentro del rango`);
     }
-    console.log(sumaRango);
+    else{
+        for(let i = inicio; i <= fin; ++i){
+            sumaRango += array[i];
+        }
+        console.log(sumaRango);
+    }
 }
 
-contarRango(numsArray, num1, num2);
+sumarArreglo(numsArray, num1, num2);
